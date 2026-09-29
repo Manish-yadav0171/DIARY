@@ -1,0 +1,239 @@
+/* ============================================================
+   Authentication & Profile Gate Styles
+   ============================================================ */
+
+.auth-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: var(--bg-app);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  z-index: 9999;
+  overflow-y: auto;
+  user-select: none;
+}
+
+.auth-card {
+  background-color: var(--paper-bg);
+  border: 1px solid var(--paper-border);
+  box-shadow: var(--paper-shadow);
+  border-radius: 20px;
+  width: 100%;
+  max-width: 440px;
+  padding: 2.75rem 2.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.5rem;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.auth-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 20px;
+  right: 20px;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--accent-gold), transparent);
+  border-radius: 3px 3px 0 0;
+}
+
+.auth-emblem {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, var(--accent-soft), transparent 80%);
+  border: 1px solid var(--paper-border);
+  color: var(--accent-warm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px rgba(132, 94, 61, 0.12);
+  margin-bottom: 0.25rem;
+}
+
+.auth-title {
+  font-family: var(--font-serif);
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--text-ink);
+  letter-spacing: -0.02em;
+  margin-bottom: 0.35rem;
+}
+
+.auth-subtitle {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  max-width: 320px;
+}
+
+/* Feature badges */
+.auth-features-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  width: 100%;
+  background-color: var(--bg-app);
+  border: 1px solid var(--paper-border);
+  border-radius: 12px;
+  padding: 0.9rem 1.1rem;
+  text-align: left;
+}
+
+.auth-feature-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.82rem;
+  color: var(--text-ink);
+}
+
+.auth-feature-icon {
+  color: var(--accent-warm);
+  flex-shrink: 0;
+}
+
+/* Google Sign-In Button */
+.btn-google-signin {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.85rem;
+  background-color: #ffffff;
+  color: #1f1f1f;
+  border: 1px solid #dadce0;
+  border-radius: 28px;
+  padding: 0.8rem 1.5rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  transition: all 0.2s ease;
+}
+
+.btn-google-signin:hover:not(:disabled) {
+  background-color: #f8f9fa;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.14);
+  transform: translateY(-1px);
+}
+
+.btn-google-signin:active:not(:disabled) {
+  transform: translateY(0);
+  background-color: #f1f3f4;
+}
+
+.btn-google-signin:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+[data-theme='dark'] .btn-google-signin {
+  background-color: #1f1f1f;
+  color: #e3e3e3;
+  border-color: #444746;
+}
+
+[data-theme='dark'] .btn-google-signin:hover:not(:disabled) {
+  background-color: #2b2b2b;
+}
+
+.google-logo-svg {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+/* Secondary Actions */
+.auth-secondary-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  width: 100%;
+}
+
+.btn-auth-link {
+  font-size: 0.82rem;
+  color: var(--accent-warm);
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: opacity 0.2s;
+}
+
+.btn-auth-link:hover {
+  opacity: 0.8;
+}
+
+/* Error banner */
+.auth-error-banner {
+  background-color: rgba(220, 38, 38, 0.08);
+  border: 1px solid rgba(220, 38, 38, 0.3);
+  color: #dc2626;
+  font-size: 0.82rem;
+  padding: 0.65rem 0.9rem;
+  border-radius: 8px;
+  width: 100%;
+  text-align: left;
+  line-height: 1.4;
+  word-break: break-word;
+}
+
+/* Config Drawer for Google Client ID */
+.auth-client-config {
+  background-color: var(--bg-app);
+  border: 1px dashed var(--accent-warm);
+  border-radius: 12px;
+  padding: 1rem;
+  width: 100%;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.auth-client-config input {
+  background-color: var(--paper-bg);
+  border: 1px solid var(--paper-border);
+  padding: 0.65rem 0.85rem;
+  border-radius: 6px;
+  font-size: 0.82rem;
+  color: var(--text-ink);
+  width: 100%;
+}
+
+.auth-client-config p {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+/* Sync Toast Notification */
+.sync-status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.3rem 0.65rem;
+  background-color: var(--accent-soft);
+  border: 1px solid var(--paper-border);
+  border-radius: 16px;
+  font-size: 0.76rem;
+  color: var(--text-muted);
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.sync-status-pill.spinning svg {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}

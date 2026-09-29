@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <linearGradient id="leather" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#9a6e46" />
+      <stop offset="100%" stop-color="#694628" />
+    </linearGradient>
+    <linearGradient id="ribbon" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#e0a96d" />
+      <stop offset="100%" stop-color="#b87f3b" />
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#2a1f17" flood-opacity="0.25" />
+    </filter>
+  </defs>
+
+  <!-- Background Base -->
+  <rect width="512" height="512" rx="108" fill="#f5f1ea" />
+
+  <!-- Book Cover with Shadow -->
+  <rect x="96" y="76" width="320" height="360" rx="24" fill="url(#leather)" filter="url(#shadow)" />
+  
+  <!-- Book Spine Stitching Line -->
+  <line x1="140" y1="76" x2="140" y2="436" stroke="#52351d" stroke-width="4" stroke-dasharray="8 6" opacity="0.6" />
+  
+  <!-- Book Page Edge -->
+  <rect x="396" y="96" width="14" height="320" rx="3" fill="#fcfbf7" opacity="0.9" />
+  <line x1="400" y1="106" x2="400" y2="406" stroke="#ded8cc" stroke-width="1.5" />
+  <line x1="404" y1="106" x2="404" y2="406" stroke="#ded8cc" stroke-width="1.5" />
+
+  <!-- Gold Ribbon Bookmark -->
+  <polygon points="210,76 250,76 250,220 230,196 210,220" fill="url(#ribbon)" />
+
+  <!-- Diary Emblem (Heart & Quill) -->
+  <circle cx="270" cy="300" r="44" fill="#54361e" opacity="0.5" />
+  <path d="M 270 286 C 265 278, 252 278, 247 285 C 240 294, 246 304, 270 322 C 294 304, 300 294, 293 285 C 288 278, 275 278, 270 286 Z" fill="#e0a96d" />
+</svg>

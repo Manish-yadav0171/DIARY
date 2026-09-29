@@ -1,0 +1,141 @@
+/* ============================================================
+   Lock Screen Styles
+   ============================================================ */
+.lockscreen-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--bg-app);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  user-select: none;
+}
+
+.lockscreen-card {
+  background-color: var(--paper-bg);
+  border: 1px solid var(--paper-border);
+  box-shadow: var(--paper-shadow);
+  border-radius: 16px;
+  width: 100%;
+  max-width: 360px;
+  padding: 2.5rem 2rem 2.75rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  text-align: center;
+}
+
+.lock-emblem {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: var(--accent-soft);
+  color: var(--accent-warm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(132, 94, 61, 0.12);
+}
+
+.lockscreen-title {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-ink);
+  margin-bottom: 0.25rem;
+}
+
+.lockscreen-desc {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+/* PIN Dots Display */
+.pin-dots {
+  display: flex;
+  gap: 1rem;
+  margin: 0.5rem 0;
+}
+
+.pin-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 2px solid var(--accent-warm);
+  background-color: transparent;
+  transition: all 0.2s ease;
+}
+
+.pin-dot.filled {
+  background-color: var(--accent-warm);
+  transform: scale(1.15);
+}
+
+.pin-dots.error {
+  animation: shake 0.4s ease-in-out;
+}
+
+.pin-dots.error .pin-dot {
+  border-color: #dc2626;
+  background-color: #dc2626;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-8px); }
+  40%, 80% { transform: translateX(8px); }
+}
+
+.lock-error-msg {
+  font-size: 0.8rem;
+  color: #dc2626;
+  font-weight: 500;
+  height: 1.2rem;
+}
+
+/* Numeric Keypad */
+.pin-keypad {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.85rem;
+  width: 100%;
+  max-width: 260px;
+}
+
+.keypad-btn {
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  background-color: var(--bg-app);
+  border: 1px solid var(--paper-border);
+  font-family: var(--font-sans);
+  font-size: 1.35rem;
+  font-weight: 500;
+  color: var(--text-ink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.keypad-btn:hover {
+  background-color: var(--accent-soft);
+  transform: scale(1.05);
+}
+
+.keypad-btn:active {
+  transform: scale(0.95);
+}
+
+.keypad-btn.action-btn {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
